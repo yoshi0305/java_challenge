@@ -50,3 +50,48 @@ Please let us know more about your Java experience in a few sentences. For examp
 - I have 3 years experience in Java and I started to use Spring Boot from last year
 - I'm a beginner and just recently learned Spring Boot
 - I know Spring Boot very well and have been using it for many years
+
+#### My profile
+- Tsuyoshi Kaburagi
+- I am a completely beginner for Spring Boot and I have not any experience of coding using the technology before.
+- (This is the first time for me to use spring boot.)
+- However, I have experience to develop PHP based APIs for my ex-company.
+
+#### What I have done
+- Introduction of JWT to make the API's endpoints more secure.
+- Due to the introduction of JWT, Swagger is not available at the moment.
+- Could you please use the api client application like postman to call the APIs?
+- The user authentication for JWT is hard coded and fixed.
+- Bug fix and add some error handling (not complete one) 
+- (I assumed that Local DB will not be down and the connection of DB is always fine.)
+- Added some validation.
+- Added Junit test cases.
+
+#### Instruction to use JWT
+- 1. Generate JWT by calling following Api.
+- POST: http://localhost:8080/api/v1/authenticate
+- {"username" : "axa", password: "axa"}
+- Response
+  {
+	"jwt": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJheGEiLCJleHAiOjE2OTYwNzg5NDgsImlhdCI6MTY5NTAzOTcxOX0.u7YdqaLaCP9Xthdpypiaei2Nr6eSOZZz0fH9Otz1hKw"
+  }
+  
+- 2. Copy the token, then when calling the other API, could you please the jwt token into following place?
+
+- Header:
+- Authorization: Bearer jwttoken(generated in step 1)
+  
+  E.g.
+- Header:
+- Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJheGEiLCJleHAiOjE2OTYwNzg5NDgsImlhdCI6MTY5NTAzOTcxOX0.u7YdqaLaCP9Xthdpypiaei2Nr6eSOZZz0fH9Otz1hKw
+  
+  
+#### What I have not done completely
+- Error handing and Message handing.
+- Adding logs
+- Caching for data manipulation.
+- Validation tests on JUnits
+- End to End Rest api tests on Junits because of including Jwt mechanism. 
+
+#### Issues that I am facing
+- lombok does not work on my work environment. Therefore, it is necessary for me to create getter,setter and constructor as well.
